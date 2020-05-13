@@ -1,1 +1,9 @@
-<mat-card>renowned-medicine works!</mat-card>
+<mat-card>
+  renowned-medicine works!
+
+  Loading: {{isLoading$ | async}}
+
+  <div *ngIf="!(isLoading$ | async)">
+    {{specialists$ | async | json}}
+  </div>
+</mat-card>
