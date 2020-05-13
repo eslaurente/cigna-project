@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { MainNavigationComponent } from './main-navigation.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('MainNavigationComponent', () => {
   let component: MainNavigationComponent;
@@ -24,6 +25,7 @@ describe('MainNavigationComponent', () => {
         MatListModule,
         MatSidenavModule,
         MatToolbarModule,
+        RouterTestingModule,
       ]
     }).compileComponents();
   }));
@@ -36,5 +38,11 @@ describe('MainNavigationComponent', () => {
 
   it('should compile', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('renders the router-outlet', () => {
+    const compiled = fixture.nativeElement;
+    const routerOutlet = compiled.querySelector('router-outlet');
+    expect(routerOutlet).toBeTruthy();
   });
 });
