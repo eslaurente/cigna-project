@@ -9,11 +9,14 @@ import { MatListModule } from '@angular/material/list';
 import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { SpecialistFinderHeaderComponent } from './specialist-finder-header/specialist-finder-header.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 @NgModule({
   declarations: [
     MainNavigationComponent,
+    SpecialistFinderHeaderComponent,
   ],
   imports: [
     CommonModule,
@@ -24,10 +27,12 @@ import { RouterModule } from '@angular/router';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    RouterModule
+    RouterModule,
+    MatProgressBarModule
   ],
   exports: [
-    MainNavigationComponent
+    MainNavigationComponent,
+    SpecialistFinderHeaderComponent
   ],
 })
 export class ComponentsModule {

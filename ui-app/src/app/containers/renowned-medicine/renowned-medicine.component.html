@@ -1,8 +1,9 @@
 <mat-card>
-  renowned-medicine works!
-
-  Loading: {{isLoading$ | async}}
-
+  <app-specialist-finder-header
+    [isLoading]="isLoading$ | async"
+    [count]="(specialists$ | async).length"
+  >
+  </app-specialist-finder-header>
   <div *ngIf="!(isLoading$ | async)">
     {{specialists$ | async | json}}
   </div>
