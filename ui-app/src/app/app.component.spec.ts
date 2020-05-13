@@ -1,14 +1,14 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
+import { ComponentsModule } from './components/components.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        SharedModule,
+        ComponentsModule,
       ],
       declarations: [
         AppComponent,

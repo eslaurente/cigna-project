@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
+import { ComponentsModule } from './components/components.module';
 import { RootStoreModule } from './root-store/root-store.module';
+import { RenownedMedicineModule } from './containers/renowned-medicine/renowned-medicine.module';
 
 @NgModule({
   declarations: [
@@ -12,9 +13,10 @@ import { RootStoreModule } from './root-store/root-store.module';
   ],
   imports: [
     BrowserModule,
+    RenownedMedicineModule,
+    ComponentsModule,
+    RootStoreModule,
     AppRoutingModule,
-    SharedModule,
-    RootStoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
