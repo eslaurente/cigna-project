@@ -1,0 +1,9 @@
+<div *ngIf="!isLoading; else loading">
+  Found {{count}} specialists
+</div>
+
+<ng-template #loading>
+  <div>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+</ng-template>
