@@ -21,7 +21,10 @@ export class RenownedMedicineComponent implements OnInit {
   ngOnInit(): void {
     this.isLoading$ = this.store$.select(selectIsLoading);
     this.specialists$ = this.store$.select(selectSpecialists);
+    this.loadData();
+  }
 
+  loadData() {
     this.store$.dispatch(LoadDataRequest());
   }
 

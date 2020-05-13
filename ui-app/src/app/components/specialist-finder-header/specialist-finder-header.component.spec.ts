@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SpecialistFinderHeaderComponent } from './specialist-finder-header.component';
+import { SpecialistFinderHeaderModule } from './specialist-finder-header.module';
 
 describe('SpecialistFinderHeaderComponent', () => {
   let component: SpecialistFinderHeaderComponent;
@@ -8,9 +9,14 @@ describe('SpecialistFinderHeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SpecialistFinderHeaderComponent ]
+      imports: [
+        SpecialistFinderHeaderModule,
+      ],
+      declarations: [
+        SpecialistFinderHeaderComponent,
+      ],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

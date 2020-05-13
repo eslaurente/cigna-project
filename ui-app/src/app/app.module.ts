@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ComponentsModule } from './components/components.module';
 import { RootStoreModule } from './root-store/root-store.module';
 import { RenownedMedicineModule } from './containers/renowned-medicine/renowned-medicine.module';
+import { MainNavigationModule } from './components/main-navigation/main-navigation.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -13,12 +14,14 @@ import { RenownedMedicineModule } from './containers/renowned-medicine/renowned-
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RenownedMedicineModule,
-    ComponentsModule,
+    MainNavigationModule,
     RootStoreModule,
     AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

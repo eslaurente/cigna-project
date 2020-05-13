@@ -2,11 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RenownedMedicineComponent } from './renowned-medicine.component';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { Test } from 'tslint';
 import { selectIsLoading, selectSpecialists } from '../../root-store/renowned-medicine/selectors';
-import { MatCardModule } from '@angular/material/card';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { ComponentsModule } from '../../components/components.module';
+import { RenownedMedicineModule } from './renowned-medicine.module';
 
 describe('RenownedMedicineComponent', () => {
   let component: RenownedMedicineComponent;
@@ -16,14 +13,12 @@ describe('RenownedMedicineComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        MatCardModule,
-        MatProgressBarModule,
-        ComponentsModule,
+        RenownedMedicineModule,
       ],
       providers: [
         provideMockStore(),
       ],
-      declarations: [RenownedMedicineComponent]
+      declarations: [RenownedMedicineComponent],
     })
       .compileComponents();
   }));

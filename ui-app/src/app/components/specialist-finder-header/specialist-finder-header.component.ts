@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-specialist-finder-header',
@@ -12,6 +12,9 @@ export class SpecialistFinderHeaderComponent implements OnInit {
 
   @Input()
   count: number;
+
+  @Output()
+  refresh = new EventEmitter<undefined>();
 
   constructor() {
   }

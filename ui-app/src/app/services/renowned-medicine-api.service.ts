@@ -3,7 +3,7 @@ import * as allData from './all-data.json';
 import { from } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RenownedMedicineApiService {
 

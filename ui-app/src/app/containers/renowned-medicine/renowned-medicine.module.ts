@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RenownedMedicineComponent } from './renowned-medicine.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { ComponentsModule } from '../../components/components.module';
-
+import { SpecialistFinderHeaderModule } from '../../components/specialist-finder-header/specialist-finder-header.module';
 
 
 @NgModule({
@@ -13,12 +10,11 @@ import { ComponentsModule } from '../../components/components.module';
   ],
   imports: [
     CommonModule,
-    MatCardModule,
-    MatProgressBarModule,
-    ComponentsModule
+    SpecialistFinderHeaderModule,
   ],
   exports: [
     RenownedMedicineComponent,
-  ]
+  ],
 })
-export class RenownedMedicineModule { }
+export class RenownedMedicineModule {
+}
