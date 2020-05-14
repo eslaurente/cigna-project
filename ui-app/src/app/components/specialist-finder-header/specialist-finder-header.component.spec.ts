@@ -35,7 +35,7 @@ describe('SpecialistFinderHeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render loading container', async(() => {
+  it('should render #loadingContainer', async(() => {
     component.isLoading = true;
     fixture.detectChanges();
     const el = fixture.debugElement.query(i => i.references.loadingContainer);
@@ -43,10 +43,10 @@ describe('SpecialistFinderHeaderComponent', () => {
     expect(el).toBeTruthy();
   }));
 
-  it('should render default result header container', async(() => {
+  it('should render #headerContainer', async(() => {
     component.isLoading = false;
     fixture.detectChanges();
-    const el = fixture.debugElement.query(i => i.references.defaultHeaderContainer);
+    const el = fixture.debugElement.query(i => i.references.headerContainer);
 
     expect(el).toBeTruthy();
   }));

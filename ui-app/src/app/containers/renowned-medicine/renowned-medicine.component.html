@@ -5,11 +5,12 @@
     (refresh)="loadData()"
   >
   </app-specialist-finder-header>
-  <div *ngIf="!(isLoading$ | async)">
+
+  <div #filterFormContainer *ngIf="!(isLoading$ | async)">
     <app-filter-form (valueChanges)="onValueChanges($event)"></app-filter-form>
   </div>
 
-  <div *ngIf="!(isLoading$ | async)" fxLayout="column" fxLayoutAlign="space-around none" fxLayoutGap="18px">
+  <div #specialistListContainer *ngIf="!(isLoading$ | async)" fxLayout="column" fxLayoutAlign="space-around none" fxLayoutGap="18px">
     <div *ngFor="let specialist of filteredSpecialists$ | async">
       <app-specialist-item
         [name]="specialist.name"

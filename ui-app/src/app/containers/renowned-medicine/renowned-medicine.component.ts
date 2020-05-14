@@ -21,7 +21,7 @@ import { FilterFormValues } from '../../models/filter-form-values';
 export class RenownedMedicineComponent implements OnInit {
   isLoading$: Observable<boolean> = new BehaviorSubject(false);
   specialists$: Observable<Array<Specialist>> = new BehaviorSubject([]);
-  filteredSpecialists$: Observable<Array<Specialist>>;
+  filteredSpecialists$: Observable<Array<Specialist>> = new BehaviorSubject([]);
   filterValueChange$ = new BehaviorSubject<FilterFormValues>({});
 
   constructor(private store$: Store<State>) {
