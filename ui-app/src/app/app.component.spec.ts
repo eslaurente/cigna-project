@@ -1,14 +1,16 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { ComponentsModule } from './components/components.module';
+import { MainNavigationModule } from './components/main-navigation/main-navigation.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        NoopAnimationsModule,
         RouterTestingModule,
-        ComponentsModule,
+        MainNavigationModule,
       ],
       declarations: [
         AppComponent,

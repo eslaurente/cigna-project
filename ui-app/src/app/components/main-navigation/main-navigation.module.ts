@@ -1,39 +1,33 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutModule } from '@angular/cdk/layout';
+import { MainNavigationComponent } from './main-navigation.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { MainNavigationComponent } from './main-navigation/main-navigation.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
-import { SpecialistFinderHeaderComponent } from './specialist-finder-header/specialist-finder-header.component';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
   declarations: [
     MainNavigationComponent,
-    SpecialistFinderHeaderComponent,
   ],
   imports: [
     CommonModule,
-    LayoutModule,
-    BrowserAnimationsModule,
+    FlexLayoutModule,
+    RouterModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    RouterModule,
-    MatProgressBarModule
+    MatExpansionModule
   ],
   exports: [
     MainNavigationComponent,
-    SpecialistFinderHeaderComponent
   ],
 })
-export class ComponentsModule {
-}
+export class MainNavigationModule { }
