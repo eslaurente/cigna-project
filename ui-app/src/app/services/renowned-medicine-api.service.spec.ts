@@ -13,4 +13,8 @@ describe('RenownedMedicineApiService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  // it('should fetch all specialists from renowned-medicine-api', () => {
+  //   service.fetchAllData()
+  // });
 });
