@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
-import * as allData from './all-data.json';
-import { from } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { delay, map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RenownedMedicineApiService {
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   fetchAllData() {
-    return from(
-        new Promise((resolve, reject) => {
-        setTimeout(() => resolve(allData.results), 1500);
-      })
+    return this.http.get(`${environment.renownedMedicineApiDomain}/specialists`).pipe(
+      map((d: any) => d.results),
+      // simulate some latency
+      delay(1500),
     );
   }
 }

@@ -31,7 +31,7 @@ describe('RenownedMedicineComponent', () => {
 
   beforeEach(() => {
     const fx = TestBed.overrideComponent(RenownedMedicineComponent, {
-      set: {changeDetection: ChangeDetectionStrategy.Default},
+      set: { changeDetection: ChangeDetectionStrategy.Default },
     });
     fixture = fx.createComponent(RenownedMedicineComponent);
     component = fixture.componentInstance;
@@ -57,7 +57,7 @@ describe('RenownedMedicineComponent', () => {
   });
 
   it('should render default state when not loading', () => {
-    const mockSpecialist: Specialist = {name: 'Dr. Pepper', specialty: 'Serving bubbly Rx drinks'};
+    const mockSpecialist: Specialist = { name: 'Dr. Pepper', specialty: 'Serving bubbly Rx drinks' };
     component.isLoading$ = of(false);
     component.specialists$ = of([mockSpecialist, mockSpecialist]);
     component.filteredSpecialists$ = of([mockSpecialist]);
