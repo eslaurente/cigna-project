@@ -1,8 +1,10 @@
-import { TestBed, async } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { MainNavigationModule } from './components/main-navigation/main-navigation.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { By } from '@angular/platform-browser';
+import { MainNavigationComponent } from './components/main-navigation/main-navigation.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -33,7 +35,7 @@ describe('AppComponent', () => {
   it('should render render navigation component', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('app-main-navigation')).toBeTruthy();
+    const comp = fixture.debugElement.query(By.directive(MainNavigationComponent));
+    expect(comp).toBeTruthy();
   });
 });
