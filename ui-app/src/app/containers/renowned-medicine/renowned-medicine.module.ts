@@ -4,7 +4,7 @@ import { RenownedMedicineComponent } from './renowned-medicine.component';
 import { SpecialistFinderHeaderModule } from '../../components/specialist-finder-header/specialist-finder-header.module';
 import { FilterFormModule } from '../../components/filter-form/filter-form.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpecialistItemModule } from '../../components/specialist-item/specialist-item.module';
 
 

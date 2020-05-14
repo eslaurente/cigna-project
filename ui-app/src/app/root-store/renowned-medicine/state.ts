@@ -1,6 +1,6 @@
 import { Specialist } from '../../models/specialist';
 
-export const featureName = 'renowned-medicine';
+export const featureName = 'renownedMedicine';
 
 export interface State {
   specialists: Array<Specialist>;

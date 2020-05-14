@@ -1,5 +1,5 @@
-import * as fromRouter from '@ngrx/router-store';
+import { State as RenownedMedicineState } from './renowned-medicine/state';
 
 export interface State {
-  router: fromRouter.RouterReducerState<any>;
+  renownedMedicine: RenownedMedicineState;
 }
