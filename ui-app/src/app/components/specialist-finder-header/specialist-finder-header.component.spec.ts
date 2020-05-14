@@ -2,6 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SpecialistFinderHeaderComponent } from './specialist-finder-header.component';
 import { SpecialistFinderHeaderModule } from './specialist-finder-header.module';
+import { ChangeDetectionStrategy } from '@angular/core';
+import { By } from '@angular/platform-browser';
+import createSpy = jasmine.createSpy;
 
 describe('SpecialistFinderHeaderComponent', () => {
   let component: SpecialistFinderHeaderComponent;
@@ -20,7 +23,10 @@ describe('SpecialistFinderHeaderComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SpecialistFinderHeaderComponent);
+    const tb = TestBed.overrideComponent(SpecialistFinderHeaderComponent, {
+      set: {changeDetection: ChangeDetectionStrategy.Default},
+    });
+    fixture = tb.createComponent(SpecialistFinderHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -28,4 +34,31 @@ describe('SpecialistFinderHeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render loading container', async(() => {
+    component.isLoading = true;
+    fixture.detectChanges();
+    const el = fixture.debugElement.query(i => i.references.loadingContainer);
+
+    expect(el).toBeTruthy();
+  }));
+
+  it('should render default result header container', async(() => {
+    component.isLoading = false;
+    fixture.detectChanges();
+    const el = fixture.debugElement.query(i => i.references.defaultHeaderContainer);
+
+    expect(el).toBeTruthy();
+  }));
+
+  it('should trigger the refresh output', async(() => {
+    const spy = createSpy();
+    component.isLoading = false;
+    component.refresh.subscribe(spy);
+    const button = fixture.debugElement.query(By.css('.refresh-button button'));
+
+    button.triggerEventHandler('click', null);
+
+    expect(spy).toHaveBeenCalled();
+  }));
 });

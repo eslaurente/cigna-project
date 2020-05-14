@@ -1,6 +1,6 @@
 <div fxLayout="column" fxLayout.xs="column" fxLayoutAlign="space-around stretch">
   <div *ngIf="!isLoading; else loading">
-    <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="0">
+    <div #defaultHeaderContainer fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="0">
       <h2>{{count}} Specialists Loaded</h2>
       <div class="refresh-button">
         <button mat-button (click)="refresh.emit()">
@@ -12,7 +12,7 @@
 </div>
 
 <ng-template #loading>
-  <div fxLayout="column" fxLayoutAlign="center center" fxFill>
+  <div #loadingContainer fxLayout="column" fxLayoutAlign="center center" fxFill>
     <h2>Loading Specialists...</h2>
     <mat-progress-bar mode="indeterminate">Loading</mat-progress-bar>
   </div>

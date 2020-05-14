@@ -4,6 +4,8 @@ import { MainNavigationComponent } from './main-navigation.component';
 import { MainNavigationModule } from './main-navigation.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
+import { By } from '@angular/platform-browser';
+import { RouterOutlet } from '@angular/router';
 
 describe('MainNavigationComponent', () => {
   let component: MainNavigationComponent;
@@ -30,9 +32,8 @@ describe('MainNavigationComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('renders the router-outlet', () => {
-    const compiled = fixture.nativeElement;
-    const routerOutlet = compiled.querySelector('router-outlet');
-    expect(routerOutlet).toBeTruthy();
+  it('should render the router-outlet', () => {
+    const comp = fixture.debugElement.query(By.directive(RouterOutlet));
+    expect(comp).toBeTruthy();
   });
 });
