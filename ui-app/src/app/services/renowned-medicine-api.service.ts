@@ -11,7 +11,7 @@ export class RenownedMedicineApiService {
   constructor(private http: HttpClient) {}
 
   fetchAllData() {
-    return this.http.get(`${environment.renownedMedicineApiDomain}/specialists`).pipe(
+    return this.http.get(`${environment.renownedMedicineApiDomain}/api/specialists`).pipe(
       map((d: any) => d.results),
       // simulate some latency
       delay(1500),
