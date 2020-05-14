@@ -4,14 +4,13 @@
     [count]="(specialists$ | async).length"
     (refresh)="loadData()"
   >
-
   </app-specialist-finder-header>
   <div *ngIf="!(isLoading$ | async)">
-    <app-filter-form></app-filter-form>
+    <app-filter-form (valueChanges)="onValueChanges($event)"></app-filter-form>
   </div>
 
-  <div fxLayout="column" fxLayoutAlign="space-around none" fxLayoutGap="18px">
-    <div *ngFor="let specialist of specialists$ | async">
+  <div *ngIf="!(isLoading$ | async)" fxLayout="column" fxLayoutAlign="space-around none" fxLayoutGap="18px">
+    <div *ngFor="let specialist of filteredSpecialists$ | async">
       <app-specialist-item
         [name]="specialist.name"
         [specialty]="specialist.specialty"

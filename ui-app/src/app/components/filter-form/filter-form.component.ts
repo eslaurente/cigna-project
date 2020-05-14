@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { FilterFormValues } from '../../models/filter-form-values';
 
 @Component({
   selector: 'app-filter-form',
@@ -13,15 +14,13 @@ export class FilterFormComponent implements OnInit {
     allFields: new FormControl(null),
   });
 
+  @Output()
+  valueChanges: Observable<FilterFormValues> = this.formGroup.valueChanges;
+
   constructor() {
   }
 
   ngOnInit(): void {
-    this.formGroup.valueChanges.pipe(
-      tap({
-        next: value => console.log(value),
-      }),
-    ).subscribe();
   }
 
 }

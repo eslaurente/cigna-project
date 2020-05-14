@@ -10,7 +10,6 @@ import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
 
-
 @NgModule({
   declarations: [
     MainNavigationComponent,

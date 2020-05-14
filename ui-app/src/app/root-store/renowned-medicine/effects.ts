@@ -10,9 +10,6 @@ export class RenownedMedicineEffectEffects {
       ofType(LoadDataRequest.type),
       exhaustMap(action => this.api.fetchAllData()
         .pipe(
-          tap({
-            next: value => console.log('Specialists Loaded', value)
-          }),
           map(specialists => ({ type: LoadDataSuccess.type, payload: specialists })),
         ),
       )
