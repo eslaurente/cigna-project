@@ -4,9 +4,8 @@
   "description": "",
   "scripts": {
     "start": "ts-node src/app.ts",
-    "start:watch": "nodemon",
     "build": "tsc",
-    "test": "mocha -r ts-node/register src/**/*.spec.ts"
+    "test": "mocha -r ts-node/register --exit src/**/*.spec.ts"
   },
   "keywords": [],
   "author": "Emerald Laurente",
