@@ -1,6 +1,6 @@
 # Cigna Application | Renowned Medicine
 This application generates data of specialists, and displays them in a filterable user interface.
-This application is meant to be a programming assignment, as part of the author's job application.
+This project is meant to be a programming assignment, as part of the author's job application.
 
 ## Technologies
 #### UI
@@ -46,7 +46,9 @@ make test-server
 # UI
 make test-ui
 ```
-> NOTE:, if you try to run the Angular e2e test, ensure that the server is also running
+> **Server:** Ensure that the server is not currently running in the background on port 3000 in order for the test to run
+ 
+> **UI:** If you try to run the Angular e2e test, ensure that the server is also running in the background
 
 ## Windows Environment
 The `make` commands will not natively work on a Windows command line environment.

@@ -2,7 +2,7 @@
   <app-specialist-finder-header
     [isLoading]="isLoading$ | async"
     [count]="(specialists$ | async).length"
-    (refresh)="loadData()"
+    (refresh)="reload()"
   >
   </app-specialist-finder-header>
 

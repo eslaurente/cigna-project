@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { State } from '../../root-store/state';
 import { LoadDataRequest } from '../../root-store/renowned-medicine/actions';
@@ -11,6 +11,7 @@ import {
 import { Specialist } from '../../models/specialist';
 import { switchMap } from 'rxjs/operators';
 import { FilterFormValues } from '../../models/filter-form-values';
+import { FilterFormComponent } from '../../components/filter-form/filter-form.component';
 
 @Component({
   selector: 'app-renowned-medicine',
@@ -19,6 +20,9 @@ import { FilterFormValues } from '../../models/filter-form-values';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RenownedMedicineComponent implements OnInit {
+  @ViewChild(FilterFormComponent)
+  private filterFormComponent: FilterFormComponent;
+
   isLoading$: Observable<boolean> = new BehaviorSubject(false);
   specialists$: Observable<Array<Specialist>> = new BehaviorSubject([]);
   filteredSpecialists$: Observable<Array<Specialist>> = new BehaviorSubject([]);
@@ -33,7 +37,7 @@ export class RenownedMedicineComponent implements OnInit {
     this.filteredSpecialists$ = this.filterValueChange$.pipe(
       switchMap((v: FilterFormValues) => this.store$.select(
         selectFilteredSpecialists,
-        v.allFields
+        v.allFields,
       )),
     );
 
@@ -42,6 +46,11 @@ export class RenownedMedicineComponent implements OnInit {
 
   loadData() {
     this.store$.dispatch(LoadDataRequest());
+  }
+
+  reload() {
+    this.filterFormComponent.resetForm();
+    this.loadData();
   }
 
   onValueChanges(formValues: FilterFormValues) {

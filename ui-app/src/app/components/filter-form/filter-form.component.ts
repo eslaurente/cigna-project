@@ -33,4 +33,8 @@ export class FilterFormComponent implements OnInit, OnDestroy {
     this.subscription$.next();
     this.subscription$.complete();
   }
+
+  resetForm() {
+    this.formGroup.reset();
+  }
 }

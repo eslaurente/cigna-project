@@ -71,7 +71,7 @@ describe('RenownedMedicineComponent', () => {
   });
 
   it('should load data on refresh event', () => {
-    const spy = spyOn(component, 'loadData');
+    const spy = spyOn(component, 'reload');
     const comp: SpecialistFinderHeaderComponent = fixture.debugElement
       .query(By.directive(SpecialistFinderHeaderComponent))
       .componentInstance;

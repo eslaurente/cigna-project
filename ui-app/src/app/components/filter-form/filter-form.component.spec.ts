@@ -16,9 +16,9 @@ describe('FilterFormComponent', () => {
         FilterFormModule,
         NoopAnimationsModule,
       ],
-      declarations: [ FilterFormComponent ]
+      declarations: [FilterFormComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -29,6 +29,13 @@ describe('FilterFormComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should trigger formGroup reset on resetForm', () => {
+    const spy = spyOn(component.formGroup, 'reset');
+    component.resetForm();
+
+    expect(spy).toHaveBeenCalled();
   });
 
   it('should trigger valueChanges output', () => {
