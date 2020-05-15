@@ -34,6 +34,9 @@ make run-ui
 ```
 > NOTE: First-time install may take several minutes
 
+While the server is running on `localhost:3000`, in a web browser, visit
+[http://localhost:42000](http://localhost:42000) to run the application.
+
 ## Tests
 Run the following commands to initiate their respective test runners.
 ```
@@ -43,6 +46,7 @@ make test-server
 # UI
 make test-ui
 ```
+> NOTE:, if you try to run the Angular e2e test, ensure that the server is also running
 
 ## Windows Environment
 The `make` commands will not natively work on a Windows command line environment.
