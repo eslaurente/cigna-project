@@ -6,7 +6,7 @@ ui-app/node_modules:
 
 .PHONY: run-server
 run-server: server-app/node_modules
-	cd server-app && npm install && npm start
+	cd server-app && npm start
 
 .PHONY: run-ui
 run-ui: ui-app/node_modules
