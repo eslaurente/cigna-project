@@ -32,7 +32,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('app');
   });
 
-  it('should render render navigation component', () => {
+  it('should render navigation component', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const comp = fixture.debugElement.query(By.directive(MainNavigationComponent));

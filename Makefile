@@ -17,5 +17,5 @@ test-server: server-app/node_modules
 	cd server-app && npm test
 
 .PHONY: test-ui
-test-server: ui-app/node_modules
+test-ui: ui-app/node_modules
 	cd ui-app && npm test
