@@ -30,7 +30,7 @@ describe('RenownedMedicineApiService', () => {
       expect(data).toEqual([mockData]);
     });
 
-    const request = httpTestingController.expectOne(`${environment.renownedMedicineApiDomain}/specialists`);
+    const request = httpTestingController.expectOne(`${environment.renownedMedicineApiDomain}/api/specialists`);
     expect(request.request.method).toEqual('GET');
     request.flush(mockResponse);
     httpTestingController.verify();
