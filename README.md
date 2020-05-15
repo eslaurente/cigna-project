@@ -1,12 +1,22 @@
 # Cigna Application | Renowned Medicine
 This application generates data of specialists, and displays them in a filterable user interface.
+This application is meant to be a programming assignment, as part of the author's job application.
 
-This application is meant to be a programming assignment, as part of the author's job application
+## Technologies
+#### UI
+[Angular v9](https://angular.io/docs) | [TypeScript](https://www.typescriptlang.org/docs/home.html) |
+[Angular Material](https://material.angular.io/components/categories) | [NgRx](https://ngrx.io/docs) |
+[RxJS](https://rxjs.dev/api) | [Karma](https://karma-runner.github.io/5.0/intro/how-it-works.html) |
+[Jasmine](https://jasmine.github.io/pages/docs_home.html)
+#### Server
+[Node.js](https://nodejs.org/en/download/current/) | [TypeScript](https://www.typescriptlang.org/docs/home.html) |
+[Express](https://expressjs.com/en/4x/api.html) | [Mocha](https://mochajs.org/#getting-started) |
+[Chai](https://www.chaijs.com/api/)
 
 
 ## Setup
 ### Install Node.js
-Install the **latest version** [Node.js](https://nodejs.org/en/download/current/).
+Install the latest version of [Node.js](https://nodejs.org/en/download/current/).
 As of May 2020, the applications are stable with **v13** and **v14**.
 
 ## Running the Applications
