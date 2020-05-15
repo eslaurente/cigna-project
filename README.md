@@ -35,7 +35,7 @@ make run-ui
 > NOTE: First-time install may take several minutes
 
 While the server is running on `localhost:3000`, in a web browser, visit
-[http://localhost:42000](http://localhost:42000) to run the application.
+[http://localhost:4200](http://localhost:4200) to run the application.
 
 ## Tests
 Run the following commands to initiate their respective test runners.
